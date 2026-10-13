@@ -23,8 +23,8 @@ WORKDIR /app
 # Copy the jar file from build stage
 COPY --from=build /app/target/*.jar app.jar
 
-# Expose port 8080
-EXPOSE 8080
+# Expose default ports
+EXPOSE 8080 10000
 
-# Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Run the application with container memory optimizations for Render (512MB free tier)
+ENTRYPOINT ["java", "-XX:+UseContainerSupport", "-Xmx400m", "-jar", "app.jar"]
