@@ -1,0 +1,140 @@
+/* Donation Stylesheet */
+
+.donation-grid-layout {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+
+.donation-form-panel {
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.donation-sidebar-panel {
+  background: #FFFFFF;
+  border: 2px solid var(--gold-accent);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 96px;
+}
+
+/* Causes Selector Grid */
+.causes-selector-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.cause-select-box {
+  border: 1.5px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  cursor: pointer;
+  background: #FFFFFF;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+.cause-select-box:hover {
+  border-color: var(--saffron);
+  background: var(--cream);
+}
+.cause-select-box.selected {
+  border-color: var(--saffron-dark);
+  background: var(--gold-soft);
+  box-shadow: 0 0 0 2px var(--saffron);
+}
+
+.cause-box-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--primary-brown);
+  margin-bottom: 0.25rem;
+}
+.cause-box-sanskrit {
+  font-family: var(--font-accent);
+  font-size: 0.82rem;
+  color: var(--saffron-dark);
+}
+
+/* Amount Chips */
+.amount-chips-group {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.amount-chip-btn {
+  padding: 0.85rem 0.5rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-gold);
+  background: #FFFFFF;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-brown);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+.amount-chip-btn:hover {
+  border-color: var(--saffron);
+  background: var(--cream);
+}
+.amount-chip-btn.selected {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--primary-brown) 100%);
+  color: #FFFFFF;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(109, 47, 12, 0.25);
+}
+
+/* Impact Cards */
+.donation-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.impact-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: all var(--transition-normal);
+}
+.impact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--saffron);
+}
+
+@media (max-width: 960px) {
+  .donation-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  .donation-sidebar-panel {
+    position: static;
+  }
+  .donation-form-panel {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .causes-selector-grid {
+    grid-template-columns: 1fr;
+  }
+  .amount-chips-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

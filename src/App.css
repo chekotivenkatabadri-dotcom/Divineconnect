@@ -1,0 +1,10 @@
+/* App root layout */
+.divine-app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content-flow {
+  flex: 1;
+}

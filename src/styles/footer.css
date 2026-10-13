@@ -1,0 +1,208 @@
+/* Footer Stylesheet */
+
+.temple-footer {
+  background: linear-gradient(180deg, var(--primary-brown) 0%, var(--primary-brown-dark) 100%);
+  color: #FFF5E6;
+  padding-top: 4.5rem;
+  border-top: 4px solid var(--gold);
+  position: relative;
+  overflow: hidden;
+}
+
+.temple-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold-warm), #FFE033, var(--saffron), var(--gold-warm));
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand-col .brand-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer-brand-col .footer-desc {
+  font-size: 0.94rem;
+  color: #E2CEBE;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.footer-temple-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--gold-light);
+}
+
+.footer-heading {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--gold);
+  margin-bottom: 1.4rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+.footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--saffron);
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footer-link-item a {
+  color: #E8D3C4;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all var(--transition-fast);
+}
+.footer-link-item a:hover {
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+.footer-timings-card {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin-top: 0.8rem;
+}
+.footer-timing-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+}
+.footer-timing-row:last-child {
+  border-bottom: none;
+}
+.footer-timing-label {
+  color: var(--gold-light);
+}
+.footer-timing-time {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.92rem;
+}
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #E8D3C4;
+}
+.contact-row svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--gold);
+}
+
+.footer-newsletter-box {
+  margin-top: 1.25rem;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+.newsletter-input {
+  flex: 1;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  font-size: 0.88rem;
+}
+.newsletter-input::placeholder {
+  color: #BF9C82;
+}
+.newsletter-btn {
+  padding: 0.65rem 1rem;
+  background: var(--gold);
+  color: var(--primary-brown-dark);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+.newsletter-btn:hover {
+  background: #FFF2A3;
+}
+
+/* Bottom Bar */
+.footer-bottom-bar {
+  background: var(--primary-brown-deep);
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
+  font-size: 0.85rem;
+  color: #BF9C82;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-shloka-banner {
+  color: var(--gold-light);
+  font-family: var(--font-accent);
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 992px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

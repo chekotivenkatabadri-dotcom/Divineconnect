@@ -1,0 +1,430 @@
+/* ==========================================================================
+   DivineConnect – Temple Management & Devotee Service System
+   Core Design System & Theme Stylesheet
+   ========================================================================== */
+
+:root {
+  /* Required Color Palette */
+  --primary-brown: #6D2F0C;
+  --primary-brown-dark: #4A1E07;
+  --primary-brown-deep: #3A1705;
+  --primary-brown-light: #8B3C0F;
+  --saffron: #D97706;
+  --saffron-light: #F59E0B;
+  --saffron-bright: #EA580C;
+  --saffron-dark: #B45309;
+  --gold: #FFD700;
+  --gold-warm: #E6B800;
+  --gold-accent: #D4AF37;
+  --gold-light: #FFF2A3;
+  --gold-soft: #FFFBE6;
+  --cream: #FFFAF0;
+  --cream-alt: #FFF5E6;
+  --cream-card: #FFFFFF;
+  --dark-text: #422814;
+  --text-muted: #7A5338;
+  --text-light: #A3795C;
+
+  /* Accent & Status Colors */
+  --sacred-red: #B91C1C;
+  --auspicious-green: #15803D;
+  --border-gold: rgba(217, 119, 6, 0.22);
+  --border-gold-strong: rgba(212, 175, 55, 0.45);
+  --border-subtle: rgba(109, 47, 12, 0.12);
+
+  /* Elevation Shadows */
+  --shadow-sm: 0 2px 8px rgba(109, 47, 12, 0.07);
+  --shadow-md: 0 8px 24px rgba(109, 47, 12, 0.10);
+  --shadow-lg: 0 16px 36px rgba(109, 47, 12, 0.15);
+  --shadow-gold: 0 0 25px rgba(255, 215, 0, 0.35);
+  --shadow-saffron: 0 10px 25px rgba(217, 119, 6, 0.25);
+
+  /* Typography */
+  --font-serif: 'Cinzel', serif;
+  --font-accent: 'Marcellus', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.5s ease;
+}
+
+/* Base Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream);
+  color: var(--dark-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(217, 119, 6, 0.03) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 215, 0, 0.04) 0%, transparent 25%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream-alt);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-brown-light);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-brown);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--primary-brown);
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+p {
+  color: var(--dark-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Common Container */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Section Title Stylings */
+.section-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 3rem auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background: rgba(217, 119, 6, 0.1);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-full);
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--primary-brown);
+  margin-bottom: 0.85rem;
+}
+
+.section-title {
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: var(--primary-brown);
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Traditional Sacred Divider */
+.sacred-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem auto;
+}
+.sacred-divider::before,
+.sacred-divider::after {
+  content: "";
+  height: 1px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, var(--gold-accent), transparent);
+}
+.sacred-divider-icon {
+  color: var(--saffron);
+  font-size: 1.1rem;
+}
+
+/* Standard Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 1.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--primary-brown) 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(109, 47, 12, 0.22);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(217, 119, 6, 0.35);
+  background: linear-gradient(135deg, var(--saffron-bright) 0%, var(--primary-brown-dark) 100%);
+  color: #FFFFFF;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, #E6B800 100%);
+  color: var(--primary-brown-dark);
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+}
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, #FFE033 0%, var(--gold) 100%);
+}
+
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold);
+  border: 1.5px solid var(--gold);
+}
+.btn-outline-gold:hover {
+  background: var(--gold);
+  color: var(--primary-brown);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+}
+
+.btn-outline-brown {
+  background: transparent;
+  color: var(--primary-brown);
+  border: 1.5px solid var(--primary-brown);
+}
+.btn-outline-brown:hover {
+  background: var(--primary-brown);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(109, 47, 12, 0.2);
+}
+
+.btn-sm {
+  padding: 0.5rem 1.15rem;
+  font-size: 0.85rem;
+}
+
+/* Card Styles */
+.card-temple {
+  background: var(--cream-card);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+.card-temple:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(217, 119, 6, 0.45);
+}
+
+/* Status Badges */
+.badge-temple {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.badge-gold {
+  background: var(--gold-soft);
+  color: var(--primary-brown-dark);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+}
+.badge-saffron {
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--saffron-dark);
+  border: 1px solid rgba(217, 119, 6, 0.25);
+}
+.badge-green {
+  background: rgba(21, 128, 61, 0.12);
+  color: var(--auspicious-green);
+  border: 1px solid rgba(21, 128, 61, 0.25);
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.35rem;
+}
+.form-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-brown);
+  margin-bottom: 0.45rem;
+}
+.form-label .required {
+  color: var(--sacred-red);
+  margin-left: 0.2rem;
+}
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-gold);
+  background: #FFFFFF;
+  color: var(--dark-text);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: all var(--transition-fast);
+}
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--saffron);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+.form-error {
+  color: var(--sacred-red);
+  font-size: 0.82rem;
+  margin-top: 0.35rem;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(58, 23, 5, 0.72);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1.5rem;
+  animation: fadeIn 0.25s ease;
+}
+.modal-content {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--gold);
+  box-shadow: 0 25px 60px rgba(74, 30, 7, 0.4);
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bellSwing {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(18deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-6deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes diyaPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.7));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.95));
+    transform: scale(1.06);
+  }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.bell-animated {
+  animation: bellSwing 1s ease-in-out;
+  transform-origin: top center;
+}
+
+.diya-glowing {
+  animation: diyaPulse 2s infinite ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.85rem;
+  }
+  .section-header {
+    margin-bottom: 2rem;
+  }
+}
